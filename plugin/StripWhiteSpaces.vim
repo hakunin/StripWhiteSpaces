@@ -10,6 +10,7 @@ function! s:StripWhiteSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
     :%s/\s\+$//e
+    :%s/\t/  /e
 
     if exists('g:strip_trailing_lines') && g:strip_trailing_lines
         :%s#\($\n\s*\)\+\%$##e
